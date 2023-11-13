@@ -3,10 +3,16 @@ const btns = wrap.querySelectorAll("li");
 
 btns.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
-    btns.forEach(el => el.classList.remove('on'));
-    btns[idx].classList.add('on');
+    activation(btns, idx);
+    changeBg(btns, idx);
+  });
+});
 
-    let bgColor = btns[idx].innerText;
-    wrap.style.backgroundColor = bgColor;
-  })
-})
+function activation(arr, idx) {
+  arr.forEach(el => el.classList.remove('on'));
+  arr[idx].classList.add('on');
+}
+function changeBg(arr, idx) {
+  let bgColor = arr[idx].innerText;
+  wrap.style.backgroundColor = bgColor;
+}
