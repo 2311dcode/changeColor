@@ -5,5 +5,8 @@ btns.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
     btns.forEach(el => el.classList.remove('on'));
     btns[idx].classList.add('on');
+
+    let bgColor = btns[idx].innerText;
+    wrap.style.backgroundColor = bgColor;
   })
 })
